@@ -124,6 +124,20 @@ function extractContestFromCodeforces(codeforcesContest : any) {
     }
   }
 
+const url = "https://contest-tracker-09lr.onrender.com/";
+
+function reloadWebsite() {
+    fetch(url)
+    .then(response => {
+        console.log(response.status);
+    })
+    .catch(error => {
+        console.error(error.message);
+    });
+}
+
+setInterval(reloadWebsite, 29000);
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })

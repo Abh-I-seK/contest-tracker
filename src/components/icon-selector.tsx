@@ -6,7 +6,7 @@ export default function IconSelector(props:{
 }){
 
     if(props.title.toLowerCase().includes("codeforces")){
-        return <img src="/codeforcesIcon.svg" alt="Codeforces Icon" className="h-6 w-6"/>
+        return <img src="/codeForcesIcon.svg" alt="Codeforces Icon" className="h-6 w-6"/>
     }
     if(props.title.toLowerCase().includes("codechef")){
         return <img src="/codechefIcon.svg" alt="Codechef Icon" className="h-6 w-6"/>

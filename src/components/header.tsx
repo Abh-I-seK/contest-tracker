@@ -9,11 +9,11 @@ export function Header() {
       <div className="container flex h-16 items-center justify-between">
         <div className="flex items-center gap-2">
           <Code2 className="h-6 w-6 text-primary" />
-          <span className="text-xl font-bold tracking-tight">ContestHub</span>
+          <span className="text-xl font-bold tracking-tight">ContestTracker</span>
         </div>
         <div className="flex items-center gap-4">
           <Button variant="outline" size="icon" asChild>
-            <Link href="https://github.com" target="_blank" rel="noopener noreferrer">
+            <Link href="https://github.com/Abh-I-seK/contest-tracker" target="_blank" rel="noopener noreferrer">
               <CodeSquare className="h-4 w-4" />
               <span className="sr-only">GitHub</span>
             </Link>

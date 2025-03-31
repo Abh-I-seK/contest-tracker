@@ -6,6 +6,8 @@ import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { Bookmark, BookmarkCheck, Car, ExternalLink, Play, Timer, Video } from "lucide-react"
 import type { Contest } from "@/lib/types"
 import Link from "next/link"
+import { useTheme } from "next-themes"
+import IconSelector from "./icon-selector"
 interface ContestCardProps {
   contest: Contest
   isBookmarked: boolean
@@ -19,7 +21,7 @@ function getDateFromSeconds(unixTimestamp:number){
 }
 
 export function ContestCard({ contest, isBookmarked, toggleBookmark, }: ContestCardProps) {
-
+  const { theme } = useTheme()
   const hasSolution = contest.solution ?? false
 
   return (
@@ -29,7 +31,7 @@ export function ContestCard({ contest, isBookmarked, toggleBookmark, }: ContestC
           <div className="flex justify-between items-start gap-2">
             <div className="flex items-start gap-3">
               <div className="mt-1">
-                <Car className="h-6 w-6" />
+                <IconSelector theme={theme as string} title={contest.platform}/>
               </div>
               <div>
                 <h3 className="font-semibold text-lg leading-tight">{contest.title}</h3>

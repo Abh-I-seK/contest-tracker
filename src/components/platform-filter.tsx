@@ -12,6 +12,8 @@ import {
 import { Filter } from "lucide-react"
 import type { Platform } from "@/lib/types"
 import { PlatformLogo } from "./platform-logo"
+import IconSelector from "./icon-selector"
+import { useTheme } from "next-themes"
 
 interface PlatformFilterProps {
   selectedPlatforms: Platform[]
@@ -24,7 +26,7 @@ export default function PlatformFilter({ selectedPlatforms, onPlatformChange }: 
     { value: "codechef", label: "CodeChef" },
     { value: "leetcode", label: "LeetCode" },
   ]
-
+  const { theme } = useTheme()
   const allSelected = selectedPlatforms.length === platforms.length
   const someSelected = selectedPlatforms.length > 0 && !allSelected
 
@@ -71,7 +73,7 @@ export default function PlatformFilter({ selectedPlatforms, onPlatformChange }: 
             onCheckedChange={() => onPlatformChange(platform.value)}
             className="flex items-center gap-2"
           >
-            <PlatformLogo platform={platform.value} className="h-4 w-4 mr-1" />
+            <IconSelector title={platform.value} theme={theme as string} />
             {platform.label}
           </DropdownMenuCheckboxItem>
         ))}
